@@ -1,0 +1,38 @@
+from djitellopy import Tello
+from time import sleep
+
+tello = Tello()
+
+# Antes funcionava normal, as agr só com o false
+tello.connect() # https://github.com/damiafuentes/DJITelloPy/issues/71
+tello.takeoff()
+#tello.get_battery() não funciona e interompa o voo
+
+tello.move_forward(148)
+tello.move_up(50)
+sleep(2)
+tello.move_right(30) # se distância estiver correta fazer 3x
+sleep(2)
+tello.move_right(30) # se distância estiver correta fazer 3x
+sleep(2)
+tello.move_down(25)
+sleep(2)
+tello.move_left(30)
+sleep(2)
+tello.move_left(30)
+sleep(2)
+tello.move_down(25)
+sleep(2)
+tello.move_right(30) # se distância estiver correta fazer 3x
+sleep(2)
+tello.move_right(30) # se distância estiver correta fazer 3x
+sleep(2)
+
+
+
+#tello.move_left(30) # se distância estiver correta fazer 2x
+
+#tello.move_up(30)
+#tello.move_right(30) # se distância estiver correta fazer 2x
+#tello.move_back(20)
+tello.land()
